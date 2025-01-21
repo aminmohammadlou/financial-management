@@ -23,5 +23,11 @@ namespace UI.Views
         {
             InitializeComponent();
         }
+
+        private void Login_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton is MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 }

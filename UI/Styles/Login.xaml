@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="LeftBackGround" TargetType="Border">
+        <Setter Property="CornerRadius" Value="50, 0, 0, 50"></Setter>
+        <Setter Property="Background" Value="{StaticResource PurpleBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="RightBackGround" TargetType="Border">
+        <Setter Property="CornerRadius" Value="0, 50, 50, 0"></Setter>
+        <Setter Property="Background" Value="{StaticResource PinkBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="OpacityCircle" TargetType="Border">
+        <Setter Property="CornerRadius" Value="720"></Setter>
+        <Setter Property="Width" Value="720"></Setter>
+        <Setter Property="Height" Value="720"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Opacity" Value="0.12"></Setter>
+    </Style>
+
+    <Style x:Key="MainCircle" TargetType="Border">
+        <Setter Property="CornerRadius" Value="600"></Setter>
+        <Setter Property="Width" Value="600"></Setter>
+        <Setter Property="Height" Value="600"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+    </Style>
+
+    <Style x:Key="TitleText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource MainFont}"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
+
+</ResourceDictionary>
