@@ -10,7 +10,8 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        MouseDown="Login_OnMouseDown">
+        MouseDown="Login_OnMouseDown"
+        FontFamily="Arial">
 
     <Grid>
         <Border>
@@ -31,21 +32,55 @@
         <Border Style="{StaticResource MainCircle}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height="1.2*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">ورود به برنامه</TextBlock>
+                <TextBlock Grid.Row="1" Style="{StaticResource TitleText}">ورود به برنامه</TextBlock>
+                <TextBlock Grid.Row="2" Style="{StaticResource TitleText2}">اطلاعات کاربری خود را وارد کنید</TextBlock>
+                <Border Grid.Row="3" Style="{StaticResource RedLine}" />
+
+                <TextBlock Grid.Row="4" Style="{StaticResource UserNameText}">:ایمیل</TextBlock>
+                <Border Grid.Row="5" Style="{StaticResource InputBorder}">
+                    <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                </Border>
+
+                <TextBlock Grid.Row="6" Style="{StaticResource UserNameText}">:رمز عبور</TextBlock>
+                <Border Grid.Row="7" Style="{StaticResource InputBorder}">
+                    <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                </Border>
+
+                <Grid Grid.Row="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Style="{StaticResource ForgotPasswordText}">فراموشی رمز عبور</TextBlock>
+                    <CheckBox Grid.Column="1" Style="{StaticResource RememberMe}">مرا به خاطر بسپار</CheckBox>
+                </Grid>
+
+                <Button Grid.Row="9" Style="{StaticResource SignIn}">
+                    ورود
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <TextBlock Grid.Row="10" Style="{StaticResource SignUpText}">ایجاد حساب کاربری</TextBlock>
+
 
             </Grid>
 

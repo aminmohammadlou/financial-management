@@ -4,13 +4,10 @@
              StartupUri="Views/Login.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <FontFamily x:Key="MainFont">Resources/Fonts/#BKoodakOutline</FontFamily>
-
             <ResourceDictionary.MergedDictionaries >
                 <ResourceDictionary Source="Styles/Colors.xaml"/>
                 <ResourceDictionary Source="Styles/Login.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
         </ResourceDictionary>
 
     </Application.Resources>

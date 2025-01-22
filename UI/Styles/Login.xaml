@@ -30,8 +30,87 @@
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         <Setter Property="FontSize" Value="30"></Setter>
-        <Setter Property="FontFamily" Value="{StaticResource MainFont}"></Setter>
         <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
+
+    <Style x:Key="TitleText2" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
+
+    <Style x:Key="RedLine" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource PinkBrush}"></Setter>
+        <Setter Property="Height" Value="2"></Setter>
+        <Setter Property="Width" Value="300"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+    </Style>
+
+    <Style x:Key="InputBorder" TargetType="Border">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource PurpleBrush}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="CornerRadius" Value="25"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Width" Value="300"></Setter>
+    </Style>
+
+    <Style x:Key="InputTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="0, 0 ,10, 0"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+    </Style>
+
+    <Style x:Key="UserNameText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Margin" Value="0 0 155 0"></Setter>
+    </Style>
+
+    <Style x:Key="ForgotPasswordText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Margin" Value="0 0 35 0"></Setter>
+    </Style>
+
+    <Style x:Key="RememberMe" TargetType="CheckBox">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Margin" Value="0 0 135 0"></Setter>
+        <Setter Property="FlowDirection" Value="RightToLeft"></Setter>
+    </Style>
+
+    <Style x:Key="SignIn" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PinkBrush}"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+        <Setter Property="Width" Value="300"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+    </Style>
+
+    <Style x:Key="SignUpText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
     </Style>
 
 </ResourceDictionary>
