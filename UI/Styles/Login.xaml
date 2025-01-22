@@ -63,7 +63,17 @@
         <Setter Property="Padding" Value="0, 0 ,10, 0"></Setter>
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+    </Style>
+
+    <Style x:Key="PasswordBox" TargetType="PasswordBox">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="0, 0 ,10, 0"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
     </Style>
 
     <Style x:Key="UserNameText" TargetType="TextBlock">
@@ -110,6 +120,7 @@
         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         <Setter Property="FontSize" Value="17"></Setter>
         <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="TextDecorations" Value="Underline"></Setter>
         <Setter Property="Cursor" Value="Hand"></Setter>
     </Style>
 

@@ -11,7 +11,7 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         MouseDown="Login_OnMouseDown"
-        FontFamily="Arial">
+        FontFamily="/Fonts/#IRANSans">
 
     <Grid>
         <Border>
@@ -33,15 +33,15 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"></RowDefinition>
-                    <RowDefinition Height="1.2*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition Height="1.5*"></RowDefinition>
                 </Grid.RowDefinitions>
@@ -57,7 +57,7 @@
 
                 <TextBlock Grid.Row="6" Style="{StaticResource UserNameText}">:رمز عبور</TextBlock>
                 <Border Grid.Row="7" Style="{StaticResource InputBorder}">
-                    <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                    <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
                 </Border>
 
                 <Grid Grid.Row="8">
