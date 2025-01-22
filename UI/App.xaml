@@ -4,9 +4,12 @@
              StartupUri="Views/Login.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <FontFamily x:Key="MainFont">/Fonts/#IRANSans</FontFamily>
+
             <ResourceDictionary.MergedDictionaries >
                 <ResourceDictionary Source="Styles/Colors.xaml"/>
                 <ResourceDictionary Source="Styles/Login.xaml"/>
+                <ResourceDictionary Source="Styles/Register.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
