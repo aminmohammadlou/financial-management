@@ -79,7 +79,7 @@
                     </Button.Resources>
                 </Button>
 
-                <TextBlock Grid.Row="10" Style="{StaticResource SignUpText}">ایجاد حساب کاربری</TextBlock>
+                <TextBlock Name="RegisterText" Grid.Row="10" MouseLeftButtonDown="RegisterText_OnMouseLeftButtonUp" Style="{StaticResource SignUpText}">ایجاد حساب کاربری</TextBlock>
 
 
             </Grid>

@@ -1,33 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace UI.Views
+namespace UI.Views;
+public partial class Register : Window
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
-    public partial class Register : Window
+    public Register()
     {
-        public Register()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void Register_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton is MouseButtonState.Pressed)
-                DragMove();
-        }
+    private void Register_OnMouseDown(object sender, MouseButtonEventArgs e)
+    {
+        if (e.LeftButton is MouseButtonState.Pressed)
+            DragMove();
+    }
+
+    private void LoginText_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        var loginWindow = new Login();
+        loginWindow.Show();
+
+        Close();
     }
 }

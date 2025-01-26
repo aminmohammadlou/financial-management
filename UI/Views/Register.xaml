@@ -101,7 +101,7 @@
                     </Button.Resources>
                 </Button>
 
-                <TextBlock Grid.Row="6" Style="{StaticResource SignUpText}">ورود به برنامه</TextBlock>
+                <TextBlock Name="LoginText" Grid.Row="6" MouseLeftButtonDown="LoginText_OnMouseLeftButtonUp" Style="{StaticResource SignUpText}">ورود به برنامه</TextBlock>
 
 
             </Grid>
