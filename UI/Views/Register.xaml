@@ -40,7 +40,6 @@
                     <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition Height="1.5*"></RowDefinition>
-                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="1" Style="{StaticResource TitleText}">ایجاد حساب کاربری</TextBlock>
@@ -61,47 +60,48 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource InputTextRight}">:نام خانودگی</TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource InputText}">:نام خانودگی</TextBlock>
                     <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource RegisterInputBorder}">
                         <TextBox Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
-                    <TextBlock Grid.Column="3" Grid.Row="0" Style="{StaticResource InputTextLeft}">:نام </TextBlock>
+                    <TextBlock Grid.Column="3" Grid.Row="0" Style="{StaticResource InputText}">:نام </TextBlock>
                     <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource RegisterInputBorder}">
                         <TextBox Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
+                    <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource InputText}">:شماره همراه</TextBlock>
                     <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource RegisterInputBorder}">
                         <TextBox Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
+                    <TextBlock Grid.Column="3" Grid.Row="1" Style="{StaticResource InputText}">:ایمیل</TextBlock>
                     <Border Grid.Column="2" Grid.Row="1" Style="{StaticResource RegisterInputBorder}">
                         <TextBox Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
+                    <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource InputText}">:تکرار رمز عبور</TextBlock>
                     <Border Grid.Column="0" Grid.Row="2" Style="{StaticResource RegisterInputBorder}">
-                        <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                        <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
                     </Border>
 
+                    <TextBlock Grid.Column="3" Grid.Row="2" Style="{StaticResource InputText}">:رمز عبور</TextBlock>
                     <Border Grid.Column="2" Grid.Row="2" Style="{StaticResource RegisterInputBorder}">
-                        <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                        <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
                     </Border>
 
                 </Grid>
 
-                
+                <Button Grid.Row="5" Style="{StaticResource SignIn}">
+                    ایجاد حساب کاربری
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
 
-                <TextBlock Grid.Row="6" Style="{StaticResource InputText}">:نام خانودگی</TextBlock>
-                <Border Grid.Row="7" Style="{StaticResource InputBorder}">
-                    <TextBox Style="{StaticResource InputTextBox}"></TextBox>
-                </Border>
-
-                <TextBlock Grid.Row="8" Style="{StaticResource UserNameText}">:ایمیل</TextBlock>
-                <Border Grid.Row="9" Style="{StaticResource InputBorder}">
-                    <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
-                </Border>
-
-                <TextBlock Grid.Row="10" Style="{StaticResource SignUpText}">ایجاد حساب کاربری</TextBlock>
+                <TextBlock Grid.Row="6" Style="{StaticResource SignUpText}">ورود به برنامه</TextBlock>
 
 
             </Grid>
