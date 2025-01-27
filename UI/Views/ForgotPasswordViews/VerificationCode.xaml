@@ -1,4 +1,4 @@
-﻿<Window x:Class="UI.Views.ForgotPassword"
+﻿<Window x:Class="UI.Views.ForgotPasswordViews.VerificationCode"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        MouseDown="ForgotPassword_OnMouseDown"
+        MouseDown="VerificationCode_OnMouseDown"
         FontFamily="{StaticResource MainFont}">
 
     <Grid>
@@ -44,16 +44,16 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="1" Style="{StaticResource TitleText}">فراموشی رمز عبور</TextBlock>
-                <TextBlock Grid.Row="2" Style="{StaticResource TitleText2}">ایمیل خود را وارد کنید</TextBlock>
+                <TextBlock Grid.Row="2" Style="{StaticResource TitleText2}">کد تایید ارسال شده به ایمیل خود را وارد کنید</TextBlock>
                 <Border Grid.Row="3" Style="{StaticResource RedLine}" />
 
-                <TextBlock Grid.Row="4" Style="{StaticResource UserNameText}">:ایمیل</TextBlock>
+                <TextBlock Grid.Row="4" Style="{StaticResource UserNameText}">:کد تایید</TextBlock>
                 <Border Grid.Row="5" Style="{StaticResource InputBorder}">
                     <TextBox Style="{StaticResource InputTextBox}"></TextBox>
                 </Border>
 
                 <Button Grid.Row="6" Style="{StaticResource SignIn}">
-                    دریافت کد تایید
+                    ارسال
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -61,7 +61,7 @@
                     </Button.Resources>
                 </Button>
 
-                <TextBlock Name="BackText" Grid.Row="7" Style="{StaticResource SignUpText}">بازگشت</TextBlock>
+                <TextBlock Name="BackText" Grid.Row="7" MouseLeftButtonDown="BackText_OnMouseLeftButtonDown" Style="{StaticResource SignUpText}">بازگشت</TextBlock>
 
             </Grid>
 

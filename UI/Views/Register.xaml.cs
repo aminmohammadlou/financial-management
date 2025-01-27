@@ -15,7 +15,7 @@ public partial class Register : Window
             DragMove();
     }
 
-    private void LoginText_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    private void LoginText_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         var loginWindow = new Login();
         loginWindow.Show();

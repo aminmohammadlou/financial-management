@@ -12,22 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace UI.Views
+namespace UI.Views.ForgotPasswordViews
 {
     /// <summary>
-    /// Interaction logic for ForgotPassword.xaml
+    /// Interaction logic for VerificationCode.xaml
     /// </summary>
-    public partial class ForgotPassword : Window
+    public partial class VerificationCode : Window
     {
-        public ForgotPassword()
+        public VerificationCode()
         {
             InitializeComponent();
         }
 
-        private void ForgotPassword_OnMouseDown(object sender, MouseButtonEventArgs e)
+        private void VerificationCode_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton is MouseButtonState.Pressed)
                 DragMove();
+        }
+
+        private void BackText_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var forgotPassword = new ForgotPassword();
+            forgotPassword.Show();
+
+            Close();
         }
     }
 }
