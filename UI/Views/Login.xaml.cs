@@ -31,4 +31,12 @@ public partial class Login : Window
 
         Close();
     }
+
+    private void LoginButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        var homeWindow = new Home();
+        homeWindow.Show();
+
+        Close();
+    }
 }

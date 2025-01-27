@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Styles/Colors.xaml"/>
                 <ResourceDictionary Source="Styles/Login.xaml"/>
                 <ResourceDictionary Source="Styles/Register.xaml"/>
+                <ResourceDictionary Source="Styles/Home.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

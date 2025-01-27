@@ -70,7 +70,7 @@
                     <CheckBox Grid.Column="1" Style="{StaticResource RememberMe}">مرا به خاطر بسپار</CheckBox>
                 </Grid>
 
-                <Button Grid.Row="9" Style="{StaticResource SignIn}">
+                <Button Grid.Row="9" Name="LoginButton" Click="LoginButton_OnClick" Style="{StaticResource SignIn}">
                     ورود
                     <Button.Resources>
                         <Style TargetType="Border">

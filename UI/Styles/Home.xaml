@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="HomeBackGround" TargetType="Border">
+        <Setter Property="CornerRadius" Value="50"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+    </Style>
+
+    <Style x:Key="HomeSidePanel" TargetType="Border">
+        <Setter Property="CornerRadius" Value="50"></Setter>
+        <Setter Property="Background" Value="{StaticResource PinkBrush}"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+    </Style>
+
+    <Style x:Key="HomeTopBar" TargetType="Border">
+        <Setter Property="CornerRadius" Value="50 50 0 0"></Setter>
+        <Setter Property="Background" Value="{StaticResource PurpleBrush}"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+    </Style>
+
+    <Style x:Key="HomeBody" TargetType="Border">
+        <Setter Property="CornerRadius" Value="0 0 50 50"></Setter>
+        <Setter Property="Background" Value="{StaticResource PurpleBrush}"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+    </Style>
+
+    <Style x:Key="HomeSidePanelTabs" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+    </Style>
+
+    <Style x:Key="HomeSidePanelTabsStackPanel" TargetType="StackPanel">
+        <Setter Property="Orientation" Value="Horizontal"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+    </Style>
+
+    <Style x:Key="HomeSidePanelText" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Margin" Value="0 0 10 0"></Setter>
+    </Style>
+</ResourceDictionary>
