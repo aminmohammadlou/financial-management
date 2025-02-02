@@ -50,4 +50,53 @@
         <Setter Property="Foreground" Value="White"></Setter>
         <Setter Property="Margin" Value="0 0 10 0"></Setter>
     </Style>
+
+    <Style x:Key="HomeTopBarText" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Margin" Value="0 0 20 0"></Setter>
+    </Style>
+
+    <Style x:Key="HomeBodyTitleText" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Margin" Value="0 0 20 0"></Setter>
+    </Style>
+
+    <Style x:Key="HomeBodyNewObjectButton" TargetType="Button">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"></Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+    </Style>
+
+    <Style x:Key="HomeBodySearchObjectBorder" TargetType="Border">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderBrush" Value="White"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="CornerRadius" Value="25"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+    </Style>
+
+    <Style x:Key="HomeSearchTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="0, 0 ,10, 0"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="CaretBrush" Value="White"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
 </ResourceDictionary>

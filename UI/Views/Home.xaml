@@ -60,9 +60,70 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Style="{StaticResource HomeTopBar}"></Border>
+                <Border Grid.Row="0" Style="{StaticResource HomeTopBar}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                <Border Grid.Row="1" Style="{StaticResource HomeBody}"></Border>
+                        <TextBlock Grid.Column="1" Style="{StaticResource HomeTopBarText}">! سلام امین</TextBlock>
+
+                        <fa:FontAwesome Grid.Column="0" Icon="UserCircleOutline" Cursor="Hand" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Style="{StaticResource HomeBody}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="6*"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="5" Style="{StaticResource HomeBodyTitleText}">مشتریان</TextBlock>
+
+                            <TextBlock Grid.Column="5" Style="{StaticResource HomeBodyTitleText}">مشتریان</TextBlock>
+
+                            <Button Grid.Column="3" Style="{StaticResource HomeBodyNewObjectButton}">
+                                مشتری جدید +
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="25"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+                            <fa:FontAwesome Grid.Column="2" Icon="Repeat" Cursor="Hand" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                            <fa:FontAwesome Grid.Column="1" Icon="Filter" Cursor="Hand" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                            <fa:FontAwesome Grid.Column="0" Icon="Download" Cursor="Hand" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Border Grid.Row="1" Style="{StaticResource HomeBodySearchObjectBorder}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <fa:FontAwesome Grid.Column="0" Icon="Search" Cursor="Hand" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                                <TextBox Grid.Column="1" Style="{StaticResource HomeSearchTextBox}"></TextBox>
+
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
 
             </Grid>
         </Grid>
