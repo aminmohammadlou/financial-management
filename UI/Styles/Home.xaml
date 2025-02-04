@@ -99,4 +99,27 @@
         <Setter Property="CaretBrush" Value="White"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
     </Style>
+
+    <Style x:Key="HomePaginationButtons" TargetType="Border">
+        <Setter Property="CornerRadius" Value="30"></Setter>
+        <Setter Property="Width" Value="30"></Setter>
+        <Setter Property="Height" Value="30"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+    </Style>
+
+    <Style x:Key="HomePaginationButtonsText" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"></Setter>
+    </Style>
+
+    <Style x:Key="HomePaginationButtonsStackPanel" TargetType="StackPanel">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Orientation" Value="Horizontal"></Setter>
+    </Style>
+
 </ResourceDictionary>
