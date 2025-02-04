@@ -86,11 +86,20 @@
 
     <Style x:Key="ForgotPasswordText" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
-        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         <Setter Property="FontSize" Value="15"></Setter>
         <Setter Property="Foreground" Value="Black"></Setter>
         <Setter Property="Cursor" Value="Hand"></Setter>
-        <Setter Property="Margin" Value="0 0 35 0"></Setter>
+        <Setter Property="Margin" Value="0 0 15 0"></Setter>
+    </Style>
+
+    <Style x:Key="RememberMeText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Margin" Value="30 0 0 0"></Setter>
     </Style>
 
     <Style x:Key="RememberMe" TargetType="CheckBox">
@@ -99,8 +108,6 @@
         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         <Setter Property="FontSize" Value="15"></Setter>
         <Setter Property="Foreground" Value="Black"></Setter>
-        <Setter Property="Margin" Value="0 0 135 0"></Setter>
-        <Setter Property="FlowDirection" Value="RightToLeft"></Setter>
     </Style>
 
     <Style x:Key="SignIn" TargetType="Button">

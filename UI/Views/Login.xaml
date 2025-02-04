@@ -60,15 +60,11 @@
                     <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
                 </Border>
 
-                <Grid Grid.Row="8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Name="ForgotPasswordText" Grid.Column="0" MouseLeftButtonDown="ForgotPasswordText_OnMouseLeftButtonDown" Style="{StaticResource ForgotPasswordText}">فراموشی رمز عبور</TextBlock>
-                    <CheckBox Grid.Column="1" Style="{StaticResource RememberMe}">مرا به خاطر بسپار</CheckBox>
-                </Grid>
+                <StackPanel Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Name="ForgotPasswordText" MouseLeftButtonDown="ForgotPasswordText_OnMouseLeftButtonDown" Style="{StaticResource ForgotPasswordText}">فراموشی رمز عبور</TextBlock>
+                    <TextBlock Style="{StaticResource RememberMeText}">مرا به خاطر بسپار</TextBlock>
+                    <CheckBox Style="{StaticResource RememberMe}"></CheckBox>
+                </StackPanel>
 
                 <Button Grid.Row="9" Name="LoginButton" Click="LoginButton_OnClick" Style="{StaticResource SignIn}">
                     ورود
