@@ -1,75 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using UI.Contents;
 
-namespace UI.Views
+namespace UI.Views;
+
+/// <summary>
+/// Interaction logic for Home.xaml
+/// </summary>
+public partial class Home : Window
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
-    public partial class Home : Window
+    private TextBlock[] SideMenuButtonTexts { get; set; }
+    public Home()
     {
-        private TextBlock[] SideMenuButtonTexts { get; set; }
-        public Home()
+        InitializeComponent();
+        SideMenuButtonTexts = [HomeButtonText, InvoicesButtonText, ProductsButtonText, CustomersButtonText];
+    }
+
+    private void Home_OnMouseDown(object sender, MouseButtonEventArgs e)
+    {
+        if (e.LeftButton is MouseButtonState.Pressed)
+            DragMove();
+    }
+
+    private void CustomersButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        var customersContent = new HomeCustomersContent();
+        HomeBodyContent.Child = customersContent;
+
+        ChangeSideMenuButtonsColors(CustomersButtonText, "PurpleBrush");
+
+    }
+
+    private void ProductsButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        var productsContent = new HomeProductsContent();
+        HomeBodyContent.Child = productsContent;
+
+        ChangeSideMenuButtonsColors(ProductsButtonText, "PurpleBrush");
+    }
+
+    private void InvoicesButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        var invoicesContent = new HomeInvoicesContent();
+        HomeBodyContent.Child = invoicesContent;
+
+        ChangeSideMenuButtonsColors(InvoicesButtonText, "PurpleBrush");
+    }
+
+    private void ChangeSideMenuButtonsColors(TextBlock item, string colorName)
+    {
+        var brush = (Brush)FindResource(colorName);
+        item.Foreground = brush;
+
+        foreach (var sideMenuButtonText in SideMenuButtonTexts)
         {
-            InitializeComponent();
-            SideMenuButtonTexts = [HomeButtonText, InvoicesButtonText, ProductsButtonText, CustomersButtonText];
-        }
-
-        private void Home_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton is MouseButtonState.Pressed)
-                DragMove();
-        }
-
-        private void CustomersButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var customersContent = new HomeCustomersContent();
-            HomeBodyContent.Child = customersContent;
-
-            ChangeSideMenuButtonsColors(CustomersButtonText, "PurpleBrush");
-
-        }
-
-        private void ProductsButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var productsContent = new HomeProductsContent();
-            HomeBodyContent.Child = productsContent;
-
-            ChangeSideMenuButtonsColors(ProductsButtonText, "PurpleBrush");
-        }
-
-        private void InvoicesButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var invoicesContent = new HomeInvoicesContent();
-            HomeBodyContent.Child = invoicesContent;
-
-            ChangeSideMenuButtonsColors(InvoicesButtonText, "PurpleBrush");
-        }
-
-        private void ChangeSideMenuButtonsColors(TextBlock item, string colorName)
-        {
-            var brush = (Brush)FindResource(colorName);
-            item.Foreground = brush;
-
-            foreach (var sideMenuButtonText in SideMenuButtonTexts)
-            {
-                if (sideMenuButtonText == item)
-                    continue;
+            if (sideMenuButtonText == item)
+                continue;
                 
-                sideMenuButtonText.Foreground = Brushes.White;
-            }
+            sideMenuButtonText.Foreground = Brushes.White;
         }
     }
 }

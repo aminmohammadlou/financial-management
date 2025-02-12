@@ -1,33 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace UI.Views.ForgotPasswordViews
+namespace UI.Views.ForgotPasswordViews;
+
+/// <summary>
+/// Interaction logic for NewPassword.xaml
+/// </summary>
+public partial class NewPassword : Window
 {
-    /// <summary>
-    /// Interaction logic for NewPassword.xaml
-    /// </summary>
-    public partial class NewPassword : Window
+    public NewPassword()
     {
-        public NewPassword()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void NewPassword_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton is MouseButtonState.Pressed)
-                DragMove();
-        }
+    private void NewPassword_OnMouseDown(object sender, MouseButtonEventArgs e)
+    {
+        if (e.LeftButton is MouseButtonState.Pressed)
+            DragMove();
     }
 }
