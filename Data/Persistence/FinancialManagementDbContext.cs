@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Data.Models;
+﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Persistence;
 
 public sealed class FinancialManagementDbContext(DbContextOptions<FinancialManagementDbContext> options) : DbContext(options)
 {
-    public const string Schema = "dbo";
+    private const string Schema = "dbo";
 
     public DbSet<UserModel> Users { get; init; } = default!;
 

@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Styles/Login.xaml"/>
                 <ResourceDictionary Source="Styles/Register.xaml"/>
                 <ResourceDictionary Source="Styles/Home.xaml"/>
+                <ResourceDictionary Source="Styles/MessageBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

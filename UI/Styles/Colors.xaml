@@ -4,9 +4,13 @@
     <!-- Colors -->
     <Color x:Key="Purple">#1D2063</Color>
     <Color x:Key="Pink">#F92562</Color>
+    <Color x:Key="Green">#2bc167</Color>
+    <Color x:Key="Red">Red</Color>
 
     <!-- Brushes -->
     <SolidColorBrush x:Key="PinkBrush" Color="{StaticResource Pink}"/>
     <SolidColorBrush x:Key="PurpleBrush" Color="{StaticResource Purple}"/>
+    <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource Green}"/>
+    <SolidColorBrush x:Key="RedBrush" Color="{StaticResource Red}"/>
 
 </ResourceDictionary>

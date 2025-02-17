@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:UI.ViewModels"
         mc:Ignorable="d"
         Height="720" Width="1280"
         WindowStyle="None"
@@ -12,6 +13,10 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Register_OnMouseDown"
         FontFamily="{StaticResource MainFont}">
+
+    <Window.DataContext>
+        <viewModels:RegisterForm/>
+    </Window.DataContext>
 
     <Grid>
         <Border>
@@ -62,37 +67,37 @@
 
                     <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource InputText}">:نام خانودگی</TextBlock>
                     <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource RegisterInputBorder}">
-                        <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                        <TextBox Text="{Binding LastName}" Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
                     <TextBlock Grid.Column="3" Grid.Row="0" Style="{StaticResource InputText}">:نام </TextBlock>
                     <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource RegisterInputBorder}">
-                        <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                        <TextBox Text="{Binding FirstName}" Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
                     <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource InputText}">:شماره همراه</TextBlock>
                     <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource RegisterInputBorder}">
-                        <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                        <TextBox Text="{Binding PhoneNumber}" Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
                     <TextBlock Grid.Column="3" Grid.Row="1" Style="{StaticResource InputText}">:ایمیل</TextBlock>
                     <Border Grid.Column="2" Grid.Row="1" Style="{StaticResource RegisterInputBorder}">
-                        <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                        <TextBox Text="{Binding Email}" Style="{StaticResource InputTextBox}"></TextBox>
                     </Border>
 
                     <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource InputText}">:تکرار رمز عبور</TextBlock>
                     <Border Grid.Column="0" Grid.Row="2" Style="{StaticResource RegisterInputBorder}">
-                        <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
+                        <PasswordBox Name="ConfirmPasswordInput" Style="{StaticResource PasswordBox}"></PasswordBox>
                     </Border>
 
                     <TextBlock Grid.Column="3" Grid.Row="2" Style="{StaticResource InputText}">:رمز عبور</TextBlock>
                     <Border Grid.Column="2" Grid.Row="2" Style="{StaticResource RegisterInputBorder}">
-                        <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
+                        <PasswordBox Name="PasswordInput" Style="{StaticResource PasswordBox}"></PasswordBox>
                     </Border>
 
                 </Grid>
 
-                <Button Grid.Row="5" Style="{StaticResource SignIn}">
+                <Button Grid.Row="5" Name="RegisterButton" Click="RegisterButton_OnClick" Style="{StaticResource SignIn}">
                     ایجاد حساب کاربری
                     <Button.Resources>
                         <Style TargetType="Border">
