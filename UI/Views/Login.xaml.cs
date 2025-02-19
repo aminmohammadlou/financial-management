@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 using Service.Services;
+using Service.ViewModels;
 using UI.Views.ForgotPasswordViews;
 
 namespace UI.Views;
@@ -36,11 +37,31 @@ public partial class Login : Window
         Close();
     }
 
-    private void LoginButton_OnClick(object sender, RoutedEventArgs e)
+    private async void LoginButton_OnClick(object sender, RoutedEventArgs e)
     {
-        var homeWindow = new Home();
-        homeWindow.Show();
+        // Get data from UI
+        var loginForm = (LoginForm)DataContext;
+        loginForm.Password = PasswordInput.Password;
 
-        Close();
+        var result = await _userService.Login(loginForm);
+
+        var messageBox = new MessageBox();
+        messageBox.ShowMessage(result);
+
+        // Enter to app
+        if (result.Type is MessageboxType.Message)
+        {
+            var userFirstName = await _userService.GetUserFirstNameByEmail(loginForm.Email);
+            var home = new Home();
+
+            home.DataContext = new HomePageData
+            {
+                TopBarText = $"! سلام {userFirstName}"
+            };
+
+            home.Show();
+
+            Close();
+        }
     }
 }

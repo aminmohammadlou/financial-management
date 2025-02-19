@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:Service.ViewModels;assembly=Service"
         mc:Ignorable="d"
         Height="720" Width="1280"
         WindowStyle="None"
@@ -12,6 +13,10 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Login_OnMouseDown"
         FontFamily="{StaticResource MainFont}">
+
+    <Window.DataContext>
+        <viewModels:LoginForm/>
+    </Window.DataContext>
 
     <Grid>
         <Border>
@@ -52,18 +57,18 @@
 
                 <TextBlock Grid.Row="4" Style="{StaticResource UserNameText}">:ایمیل</TextBlock>
                 <Border Grid.Row="5" Style="{StaticResource InputBorder}">
-                    <TextBox Style="{StaticResource InputTextBox}"></TextBox>
+                    <TextBox Text="{Binding Email}" Style="{StaticResource InputTextBox}"></TextBox>
                 </Border>
 
                 <TextBlock Grid.Row="6" Style="{StaticResource UserNameText}">:رمز عبور</TextBlock>
                 <Border Grid.Row="7" Style="{StaticResource InputBorder}">
-                    <PasswordBox Style="{StaticResource PasswordBox}"></PasswordBox>
+                    <PasswordBox Name="PasswordInput" Style="{StaticResource PasswordBox}"></PasswordBox>
                 </Border>
 
                 <StackPanel Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock Name="ForgotPasswordText" MouseLeftButtonDown="ForgotPasswordText_OnMouseLeftButtonDown" Style="{StaticResource ForgotPasswordText}">فراموشی رمز عبور</TextBlock>
                     <TextBlock Style="{StaticResource RememberMeText}">مرا به خاطر بسپار</TextBlock>
-                    <CheckBox Style="{StaticResource RememberMe}"></CheckBox>
+                    <CheckBox IsChecked="{Binding IsRememberMeChecked}" Style="{StaticResource RememberMe}"></CheckBox>
                 </StackPanel>
 
                 <Button Grid.Row="9" Name="LoginButton" Click="LoginButton_OnClick" Style="{StaticResource SignIn}">
@@ -76,8 +81,6 @@
                 </Button>
 
                 <TextBlock Name="RegisterText" Grid.Row="10" MouseLeftButtonDown="RegisterText_OnMouseLeftButtonDown" Style="{StaticResource SignUpText}">ایجاد حساب کاربری</TextBlock>
-
-
             </Grid>
 
         </Border>

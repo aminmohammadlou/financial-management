@@ -25,5 +25,16 @@ namespace Service.Services
             var hashBytes = deriveBytes.GetBytes(KeySize);
             return Convert.ToBase64String(hashBytes);
         }
+
+        public static bool VerifyPassword(string enteredPassword, string storedSalt, string storedHash)
+        {
+            var saltBytes = Convert.FromBase64String(storedSalt);
+
+            using var deriveBytes = new Rfc2898DeriveBytes(enteredPassword, saltBytes, Iterations, HashAlgorithmName.SHA256);
+            var enteredHashBytes = deriveBytes.GetBytes(KeySize);
+            var enteredHash = Convert.ToBase64String(enteredHashBytes);
+
+            return storedHash == enteredHash;
+        }
     }
 }

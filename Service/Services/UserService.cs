@@ -41,5 +41,27 @@ namespace Service.Services
 
             return new MessageBoxData(MessageboxType.Message, "کاربر با موفقیت ثبت شد");
         }
+
+        public async Task<MessageBoxData> Login(LoginForm form)
+        {
+            // Validate data
+            var result = form.Validate();
+            if (result is not null)
+                return result;
+
+            // Find user
+            var user = await repository.FindUserByEmail(form.Email);
+            if (user is null)
+                return new MessageBoxData(MessageboxType.Error, "کاربر با این ایمیل پیدا نشد");
+
+            // Validate password
+            return !Utils.VerifyPassword(form.Password, user.Salt, user.Password) ? new MessageBoxData(MessageboxType.Error, "رمز عبور اشتباه است") : new MessageBoxData(MessageboxType.Message, "ورود با موفقیت انجام شد");
+        }
+
+        public async Task<string> GetUserFirstNameByEmail(string email)
+        {
+            var user = await repository.GetUserByEmail(email);
+            return user.FirstName;
+        }
     }
 }

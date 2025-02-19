@@ -21,5 +21,10 @@ namespace Service.Repositories
         {
             return await dbContext.Users.SingleOrDefaultAsync(x => x.PhoneNumber == phoneNumber);
         }
+
+        public async Task<UserModel> GetUserByEmail(string email)
+        {
+            return await dbContext.Users.SingleAsync(x => x.Email == email);
+        }
     }
 }
