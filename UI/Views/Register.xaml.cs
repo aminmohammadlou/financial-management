@@ -1,13 +1,17 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Service.Services;
 using Service.ViewModels;
 
 namespace UI.Views;
 
 public partial class Register : Window
 {
-    public Register()
+    private readonly UserService _userService;
+
+    public Register(UserService userService)
     {
+        _userService = userService;
         InitializeComponent();
     }
 
@@ -19,25 +23,31 @@ public partial class Register : Window
 
     private void LoginText_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
-        var loginWindow = new Login();
+        var loginWindow = new Login(_userService);
         loginWindow.Show();
 
         Close();
     }
 
-    private void RegisterButton_OnClick(object sender, RoutedEventArgs e)
+    private async void RegisterButton_OnClick(object sender, RoutedEventArgs e)
     {
         // Get data from UI
         var registerForm = (RegisterForm)DataContext;
         registerForm.Password = PasswordInput.Password;
         registerForm.ConfirmPassword = ConfirmPasswordInput.Password;
 
-        // Validate data
-        var result = registerForm.Validate();
-        if (result is not null)
+        var result = await _userService.Register(registerForm);
+
+        var messageBox = new MessageBox();
+        messageBox.ShowMessage(result);
+
+        // Enter to app
+        if (result.Type is MessageboxType.Message)
         {
-            var messageBox = new MessageBox();
-            messageBox.ShowMessage(result);
+            var home = new Home();
+            home.Show();
+
+            Close();
         }
     }
 }

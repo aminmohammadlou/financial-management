@@ -7,5 +7,6 @@ public sealed class UserModel
     public required string LastName { get; set; }
     public required string Email { get; init; }
     public required string Password { get; set; }
+    public required string Salt { get; set; }
     public string? PhoneNumber { get; set; }
 }

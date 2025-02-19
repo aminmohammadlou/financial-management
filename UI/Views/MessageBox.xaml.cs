@@ -33,16 +33,14 @@ namespace UI.Views
             DataContext = messageboxData;
 
             // Set color
-            var brush = (Brush)FindResource("RedBrush");
-            MainBorder.Background = brush;
-
-            ButtonsStackPanel.Visibility = messageboxData.Type switch
+            var brush = messageboxData.Type switch
             {
-                MessageboxType.Message => Visibility.Collapsed,
-                MessageboxType.Error => Visibility.Visible,
-                MessageboxType.Confirm => Visibility.Visible,
+                MessageboxType.Message => (Brush)FindResource("GreenBrush"),
+                MessageboxType.Error => (Brush)FindResource("RedBrush"),
+                MessageboxType.Confirm => (Brush)FindResource("PurpleBrush"),
                 _ => throw new ArgumentOutOfRangeException()
             };
+            MainBorder.Background = brush;
 
             ShowDialog();
         }

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Service.Services;
 
 namespace UI.Views.ForgotPasswordViews;
 
@@ -8,8 +9,11 @@ namespace UI.Views.ForgotPasswordViews;
 /// </summary>
 public partial class ForgotPassword : Window
 {
-    public ForgotPassword()
+    private readonly UserService _userService;
+
+    public ForgotPassword(UserService userService)
     {
+        _userService = userService;
         InitializeComponent();
     }
 
@@ -21,7 +25,7 @@ public partial class ForgotPassword : Window
 
     private void BackText_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
-        var login = new Login();
+        var login = new Login(_userService);
         login.Show();
 
         Close();

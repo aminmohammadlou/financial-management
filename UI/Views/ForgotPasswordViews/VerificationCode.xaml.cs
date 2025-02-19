@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Service.Services;
 
 namespace UI.Views.ForgotPasswordViews;
 
@@ -8,8 +9,11 @@ namespace UI.Views.ForgotPasswordViews;
 /// </summary>
 public partial class VerificationCode : Window
 {
-    public VerificationCode()
+    private readonly UserService _userService;
+
+    public VerificationCode(UserService userService)
     {
+        _userService = userService;
         InitializeComponent();
     }
 
@@ -21,7 +25,7 @@ public partial class VerificationCode : Window
 
     private void BackText_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
-        var forgotPassword = new ForgotPassword();
+        var forgotPassword = new ForgotPassword(_userService);
         forgotPassword.Show();
 
         Close();
