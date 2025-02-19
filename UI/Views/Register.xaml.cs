@@ -45,6 +45,12 @@ public partial class Register : Window
         if (result.Type is MessageboxType.Message)
         {
             var home = new Home();
+
+            home.DataContext = new HomePageData
+            {
+                TopBarText = $"! سلام {registerForm.FirstName}"
+            };
+
             home.Show();
 
             Close();

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:viewModels="clr-namespace:Service.ViewModels;assembly=Service"
         mc:Ignorable="d"
         Height="720" Width="1280"
         WindowStyle="None"
@@ -13,6 +14,10 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Home_OnMouseDown"
         FontFamily="{StaticResource MainFont}">
+
+    <Window.DataContext>
+        <viewModels:HomePageData/>
+    </Window.DataContext>
 
     <Border Style="{StaticResource HomeBackGround}">
         <Grid>
@@ -31,7 +36,7 @@
                     <Image Grid.Row="0" Source="/Images/logo.png" Width="100" Height="100"/>
 
                     <StackPanel Grid.Row="1">
-                        <StackPanel Style="{StaticResource HomeSidePanelTabsStackPanel}">
+                        <StackPanel Name="HomeButton" MouseLeftButtonDown="HomeButton_OnMouseLeftButtonDown" Style="{StaticResource HomeSidePanelTabsStackPanel}">
                             <TextBlock Name="HomeButtonText" Style="{StaticResource HomeSidePanelText}">خانه</TextBlock>
                             <fa:FontAwesome Icon="Home" Foreground="White" FontSize="30"/>
                         </StackPanel>
@@ -67,7 +72,7 @@
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="1" Style="{StaticResource HomeTopBarText}">! سلام امین</TextBlock>
+                        <TextBlock Grid.Column="1" Name="HomeTopBarText" Text="{Binding TopBarText}" Style="{StaticResource HomeTopBarText}"></TextBlock>
 
                         <fa:FontAwesome Grid.Column="0" Icon="UserCircleOutline" Cursor="Hand" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0 0 0"/>
                     </Grid>

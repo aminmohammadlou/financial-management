@@ -24,6 +24,14 @@ public partial class Home : Window
             DragMove();
     }
 
+    private void HomeButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        var invoicesContent = new HomeInvoicesContent();
+        HomeBodyContent.Child = invoicesContent;
+
+        ChangeSideMenuButtonsColors(HomeButtonText, "PurpleBrush");
+    }
+
     private void CustomersButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         var customersContent = new HomeCustomersContent();
