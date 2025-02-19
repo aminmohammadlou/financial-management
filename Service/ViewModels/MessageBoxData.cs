@@ -1,4 +1,4 @@
-﻿namespace UI.ViewModels;
+﻿namespace Service.ViewModels;
 
 public class MessageBoxData
 {

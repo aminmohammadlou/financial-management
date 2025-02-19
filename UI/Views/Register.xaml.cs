@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using UI.ViewModels;
+using Service.ViewModels;
 
 namespace UI.Views;
 
@@ -28,35 +27,17 @@ public partial class Register : Window
 
     private void RegisterButton_OnClick(object sender, RoutedEventArgs e)
     {
+        // Get data from UI
         var registerForm = (RegisterForm)DataContext;
         registerForm.Password = PasswordInput.Password;
         registerForm.ConfirmPassword = ConfirmPasswordInput.Password;
 
-        try
-        {
-            registerForm.Validate();
-        }
-        catch (Exception ex)
+        // Validate data
+        var result = registerForm.Validate();
+        if (result is not null)
         {
             var messageBox = new MessageBox();
-
-            var messageboxData = new MessageBoxData(MessageboxType.Error, ex.Message);
-            messageBox.DataContext = messageboxData;
-
-            var brush = (Brush)FindResource("RedBrush");
-            messageBox.MainBorder.Background = brush;
-
-            messageBox.ButtonsStackPanel.Visibility = messageboxData.Type switch
-            {
-                MessageboxType.Message => Visibility.Collapsed,
-                MessageboxType.Error => Visibility.Visible,
-                MessageboxType.Confirm => Visibility.Visible,
-                _ => throw new ArgumentOutOfRangeException()
-            };
-
-            messageBox.ShowDialog();
+            messageBox.ShowMessage(result);
         }
-
-
     }
 }

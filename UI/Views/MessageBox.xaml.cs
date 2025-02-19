@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using Service.ViewModels;
 
 namespace UI.Views
 {
@@ -22,6 +24,27 @@ namespace UI.Views
         private void ConfirmButton_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        public void ShowMessage(MessageBoxData data)
+        {
+            // Set data
+            var messageboxData = new MessageBoxData(data.Type, data.Message);
+            DataContext = messageboxData;
+
+            // Set color
+            var brush = (Brush)FindResource("RedBrush");
+            MainBorder.Background = brush;
+
+            ButtonsStackPanel.Visibility = messageboxData.Type switch
+            {
+                MessageboxType.Message => Visibility.Collapsed,
+                MessageboxType.Error => Visibility.Visible,
+                MessageboxType.Confirm => Visibility.Visible,
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            ShowDialog();
         }
     }
 }

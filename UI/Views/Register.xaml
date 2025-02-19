@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModels="clr-namespace:UI.ViewModels"
+        xmlns:viewModels1="clr-namespace:Service.ViewModels;assembly=Service"
         mc:Ignorable="d"
         Height="720" Width="1280"
         WindowStyle="None"
@@ -15,7 +15,7 @@
         FontFamily="{StaticResource MainFont}">
 
     <Window.DataContext>
-        <viewModels:RegisterForm/>
+        <viewModels1:RegisterForm/>
     </Window.DataContext>
 
     <Grid>
