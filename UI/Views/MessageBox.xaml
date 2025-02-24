@@ -25,9 +25,18 @@
 
             <TextBlock Grid.Row="1" Text="{Binding Message}" Style="{StaticResource MessageboxMessage}"></TextBlock>
 
-            <StackPanel Name="ButtonsStackPanel" Grid.Row="2">
-                <Button Name="ConfirmButton" Click="ConfirmButton_OnClick" Style="{StaticResource MessageboxButton}">
+            <StackPanel Name="ButtonsStackPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="ConfirmButton" Click="ConfirmButton_OnClick" Style="{StaticResource ConfirmMessageboxButton}">
                     تایید
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button Name="CancelButton" Click="CancelButton_OnClick" Style="{StaticResource CancelMessageboxButton}">
+                    انصراف
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="15"/>

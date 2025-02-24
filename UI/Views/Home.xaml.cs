@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Service.ViewModels;
 using UI.Contents;
 
 namespace UI.Views;
@@ -66,8 +67,18 @@ public partial class Home : Window
         {
             if (sideMenuButtonText == item)
                 continue;
-                
+
             sideMenuButtonText.Foreground = Brushes.White;
         }
+    }
+
+    private void ExitButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        var messageBox = new MessageBox();
+        var messageBoxData = new MessageBoxData(MessageboxType.Confirm, "آیا میخواهید از برنامه خارج شوید؟");
+        messageBox.ShowMessage(messageBoxData);
+
+        if (messageBox.IsConfirmButtonClicked)
+            Close();
     }
 }

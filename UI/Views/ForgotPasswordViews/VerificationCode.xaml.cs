@@ -30,4 +30,9 @@ public partial class VerificationCode : Window
 
         Close();
     }
+
+    private void ExitButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        Close();
+    }
 }

@@ -56,4 +56,9 @@ public partial class Register : Window
             Close();
         }
     }
+
+    private void ExitButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        Close();
+    }
 }

@@ -122,4 +122,16 @@
         <Setter Property="Orientation" Value="Horizontal"></Setter>
     </Style>
 
+    <Style x:Key="Exit" TargetType="Button">
+        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"></Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+    </Style>
+
 </ResourceDictionary>

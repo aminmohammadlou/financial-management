@@ -18,4 +18,9 @@ public partial class NewPassword : Window
         if (e.LeftButton is MouseButtonState.Pressed)
             DragMove();
     }
+
+    private void ExitButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        Close();
+    }
 }

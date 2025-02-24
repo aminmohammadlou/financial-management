@@ -16,7 +16,7 @@
         <Setter Property="Foreground" Value="White"></Setter>
     </Style>
 
-    <Style x:Key="MessageboxButton" TargetType="Button">
+    <Style x:Key="ConfirmMessageboxButton" TargetType="Button">
         <Setter Property="Background" Value="White"></Setter>
         <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"></Setter>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
@@ -27,6 +27,20 @@
         <Setter Property="BorderThickness" Value="0"></Setter>
         <Setter Property="Margin" Value="5"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+
+    <Style x:Key="CancelMessageboxButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource RedBrush}"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="Height" Value="30"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Visibility" Value="Collapsed"></Setter>
     </Style>
 
 </ResourceDictionary>

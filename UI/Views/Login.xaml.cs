@@ -64,4 +64,9 @@ public partial class Login : Window
             Close();
         }
     }
+
+    private void ExitButton_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+       Close();
+    }
 }

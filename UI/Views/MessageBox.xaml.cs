@@ -10,6 +10,8 @@ namespace UI.Views
     /// </summary>
     public partial class MessageBox : Window
     {
+        public bool IsConfirmButtonClicked;
+
         public MessageBox()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace UI.Views
 
         private void ConfirmButton_OnClick(object sender, RoutedEventArgs e)
         {
+            IsConfirmButtonClicked = true;
             Close();
         }
 
@@ -37,12 +40,20 @@ namespace UI.Views
             {
                 MessageboxType.Message => (Brush)FindResource("GreenBrush"),
                 MessageboxType.Error => (Brush)FindResource("RedBrush"),
-                MessageboxType.Confirm => (Brush)FindResource("PurpleBrush"),
+                MessageboxType.Confirm => (Brush)FindResource("PinkBrush"),
                 _ => throw new ArgumentOutOfRangeException()
             };
             MainBorder.Background = brush;
 
+            if (data.Type is MessageboxType.Confirm)
+                CancelButton.Visibility = Visibility.Visible;
+            
             ShowDialog();
+        }
+
+        private void CancelButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

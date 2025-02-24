@@ -31,6 +31,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"></RowDefinition>
                         <RowDefinition></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Image Grid.Row="0" Source="/Images/logo.png" Width="100" Height="100"/>
@@ -54,6 +55,11 @@
                         <StackPanel Name="CustomersButton" MouseLeftButtonDown="CustomersButton_OnMouseLeftButtonDown" Style="{StaticResource HomeSidePanelTabsStackPanel}">
                             <TextBlock Name="CustomersButtonText" Style="{StaticResource HomeSidePanelText}">مشتریان</TextBlock>
                             <fa:FontAwesome Icon="User" Foreground="White" FontSize="30"/>
+                        </StackPanel>
+
+                        <StackPanel Name="ExitButton" MouseLeftButtonDown="ExitButton_OnClick" Style="{StaticResource HomeSidePanelTabsStackPanel}">
+                            <TextBlock Name="ExitButtonText" Style="{StaticResource HomeSidePanelText}">خروج</TextBlock>
+                            <fa:FontAwesome Icon="Close" Foreground="White" FontSize="30"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
