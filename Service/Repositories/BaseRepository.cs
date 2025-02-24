@@ -1,4 +1,6 @@
-﻿using Data.Persistence;
+﻿using Data.Models;
+using Data.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Service.Repositories
 {
@@ -32,6 +34,11 @@ namespace Service.Repositories
         public bool ChangeTrackerHasChanges()
         {
             return dbContext.ChangeTracker.HasChanges();
+        }
+
+        public async Task<SettingsModel> GetSettings()
+        {
+            return await dbContext.Settings.FirstAsync();
         }
     }
 }

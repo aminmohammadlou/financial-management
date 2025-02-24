@@ -4,9 +4,9 @@ namespace Service.ViewModels;
 
 public class LoginForm
 {
-    public required string Email { get; set; }
-    public required string Password { get; set; }
-    public required bool IsRememberMeChecked { get; set; }
+    public string? Email { get; set; }
+    public string? Password { get; set; }
+    public bool IsRememberMeChecked { get; set; }
 
     public MessageBoxData? Validate()
     {

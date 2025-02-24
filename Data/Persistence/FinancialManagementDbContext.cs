@@ -8,6 +8,7 @@ public sealed class FinancialManagementDbContext(DbContextOptions<FinancialManag
     private const string Schema = "dbo";
 
     public DbSet<UserModel> Users { get; init; } = default!;
+    public DbSet<SettingsModel> Settings { get; init; } = default!;
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -25,6 +26,12 @@ public sealed class FinancialManagementDbContext(DbContextOptions<FinancialManag
 
             entity.HasIndex(x => x.Email).IsUnique();
             entity.HasIndex(x => x.PhoneNumber).IsUnique();
+        });
+
+        modelBuilder.Entity<SettingsModel>(entity => {
+            entity.HasKey(x => x.Id);
+
+            entity.Property(x => x.LastUserLoggedInEmail).HasMaxLength(100);
         });
     }
 

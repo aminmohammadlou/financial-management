@@ -55,7 +55,16 @@ namespace Service.Services
                 return new MessageBoxData(MessageboxType.Error, "کاربر با این ایمیل پیدا نشد");
 
             // Validate password
-            return !Utils.VerifyPassword(form.Password, user.Salt, user.Password) ? new MessageBoxData(MessageboxType.Error, "رمز عبور اشتباه است") : new MessageBoxData(MessageboxType.Message, "ورود با موفقیت انجام شد");
+            var messageBox = !Utils.VerifyPassword(form.Password, user.Salt, user.Password) ? new MessageBoxData(MessageboxType.Error, "رمز عبور اشتباه است") : new MessageBoxData(MessageboxType.Message, "ورود با موفقیت انجام شد");
+
+            if (form.IsRememberMeChecked)
+            {
+                var settings = await repository.GetSettings();
+                settings.LastUserLoggedInEmail = form.Email;
+                await repository.SaveChanges();
+            }
+
+            return messageBox;
         }
 
         public async Task<string> GetUserFirstNameByEmail(string email)
